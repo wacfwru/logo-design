@@ -7,6 +7,7 @@ library(RCurl)
 ## define fonts
 quartzFonts(open_sans = c("OpenSans", "OpenSans-Italic", "OpenSans-Bold", "OpenSans-BoldItalic"))
 quartzFonts(uni_sans = c("UniSansBook", "UniSansBookItalic", "UniSansLightItalic", "UniSansRegularItalic"))
+quartzFonts(roboto = c("RobotoCondensed-Regular", "RobotoCondensed-Italic", "RobotoCondensed-Bold", "RobotoCondensed-BoldItalic"))
 
 ## color palette
 colors <- list(gray = "#e0e0e0",
@@ -46,7 +47,8 @@ flag_out <- TRUE
 
 if(flag_out) {
 #   tiff(file = "wacfwru_logo.tiff", height = 5.5, width = 5.5, units = "in", res = 300)
-   png(file = "wacfwru_logo.png", height = 5.5, width = 5.5, units = "in", res = 300)
+   png(file = "wacfwru_logo.png", height = 5.5, width = 5.5, units = "in", res = 300,
+       bg = "transparent")
 } else {
 	dev.new(height = 6, width = 6)
 }
@@ -59,18 +61,24 @@ map("state", region = "washington", fill = TRUE, col = colors$green,
 mtext("WASHINGTON", side = 3, line = -3.5,
       cex = 3, adj = 0.87)
 
-par(family = "open_sans")
+# par(family = "open_sans")
+# mtext("C o o p e r a t i v e", side = 3, line = -5.5,
+#       cex = 2, adj = 0.81)
+# mtext("Fish and Wildlife", side = 3, line = -7.6,
+#       cex = 1.8, adj = 0.76)
+# mtext("Research Unit", side = 3, line = -9.6,
+#       cex = 1.8, adj = 0.74)
 
+par(family = "roboto")
 mtext("C o o p e r a t i v e", side = 3, line = -5.5,
-      cex = 2, adj = 0.81)
-      
+      cex = 2, adj = 0.79)
 mtext("Fish and Wildlife", side = 3, line = -7.6,
       cex = 1.8, adj = 0.76)
-
 mtext("Research Unit", side = 3, line = -9.6,
       cex = 1.8, adj = 0.74)
 
-add_phylopic_base(image_data(images$salmon, size = 512)[[1]], 0.5, 0.5, 0)
+
+add_phylopic_base(salmon_logo, 0.5, 0.5, 0)
 
 logoing_func(salmon_logo, x=0.35, y=0.3, size=0.2)
 logoing_func(loon_logo, x=0.6, y=0.3, size=0.2)
