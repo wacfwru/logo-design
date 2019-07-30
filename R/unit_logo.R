@@ -15,7 +15,7 @@ colors <- list(gray = "#ededed",
                purple = "#4b2e83",
                green = "#336633",
                black = "#000000",
-               brown = "#663300")
+               brown = "#6f522b")
 
 ## function to add png's with proper aspect ratio
 ## See: https://github.com/sckott/rphylopic/issues/14
@@ -67,19 +67,31 @@ mtext("WASHINGTON", side = 3, line = -3.5,
       cex = 3, adj = 0.87, col = colors$green)
 
 par(family = "roboto")
-mtext("C o o p e r a t i v e", side = 3, line = -5.5,
-      cex = 2, adj = 0.79, col = colors$brown)
-mtext("Fish and Wildlife", side = 3, line = -7.6,
-      cex = 1.8, adj = 0.76, col = colors$brown)
-mtext("Research Unit", side = 3, line = -9.6,
-      cex = 1.8, adj = 0.74, col = colors$brown)
+
+# mtext("C o o p e r a t i v e", side = 3, line = -5.5,
+#       cex = 2, adj = 0.79, col = colors$brown)
+# mtext("Fish and Wildlife", side = 3, line = -7.6,
+#       cex = 1.8, adj = 0.76, col = colors$brown)
+# mtext("Research Unit", side = 3, line = -9.6,
+#       cex = 1.8, adj = 0.74, col = colors$brown)
+
+mtext("C o o p e r a t i v e", side = 3, line = -5.6,
+      cex = 2.2, adj = 0.79, col = colors$brown)
+mtext("Fish and Wildlife", side = 3, line = -7.8,
+      cex = 2, adj = 0.76, col = colors$brown)
+mtext("Research Unit", side = 3, line = -9.8,
+      cex = 2, adj = 0.74, col = colors$brown)
 
 
 add_phylopic_base(salmon_logo, 0.5, 0.5, 0)
 
-logoing_func(salmon_logo, x=0.35, y=0.3, size=0.2)
-logoing_func(loon_logo, x=0.6, y=0.3, size=0.15)
-logoing_func(cougar_logo, x=0.85, y=0.3, size=0.15)
+# logoing_func(salmon_logo, x=0.35, y=0.3, size=0.2)
+# logoing_func(loon_logo, x=0.6, y=0.3, size=0.15)
+# logoing_func(cougar_logo, x=0.85, y=0.3, size=0.15)
+
+logoing_func(salmon_logo, x=0.45, y=0.3, size=0.15)
+logoing_func(loon_logo, x=0.66, y=0.3, size=0.10)
+logoing_func(cougar_logo, x=0.87, y=0.3, size=0.10)
 
 if(flag_out) {
 	dev.off()
