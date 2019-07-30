@@ -12,7 +12,8 @@ quartzFonts(roboto = c("RobotoCondensed-Regular", "RobotoCondensed-Italic", "Rob
 ## color palette
 colors <- list(gray = "#e0e0e0",
                purple = "#4b2e83",
-               green = "#add0a0")
+               green = "#add0a0",
+               black = "#000000")
 
 ## function to add png's with proper aspect ratio
 ## See: https://github.com/sckott/rphylopic/issues/14
@@ -59,7 +60,7 @@ map("state", region = "washington", fill = TRUE, col = colors$green,
     mar = c(1,1,0,0))
 
 mtext("WASHINGTON", side = 3, line = -3.5,
-      cex = 3, adj = 0.87)
+      cex = 3, adj = 0.87, col = colors$black)
 
 # par(family = "open_sans")
 # mtext("C o o p e r a t i v e", side = 3, line = -5.5,
@@ -71,11 +72,11 @@ mtext("WASHINGTON", side = 3, line = -3.5,
 
 par(family = "roboto")
 mtext("C o o p e r a t i v e", side = 3, line = -5.5,
-      cex = 2, adj = 0.79)
+      cex = 2, adj = 0.79, col = colors$black)
 mtext("Fish and Wildlife", side = 3, line = -7.6,
-      cex = 1.8, adj = 0.76)
+      cex = 1.8, adj = 0.76, col = colors$black)
 mtext("Research Unit", side = 3, line = -9.6,
-      cex = 1.8, adj = 0.74)
+      cex = 1.8, adj = 0.74, col = colors$black)
 
 
 add_phylopic_base(salmon_logo, 0.5, 0.5, 0)
