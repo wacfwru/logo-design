@@ -54,7 +54,7 @@ logos <- lapply(urls,
 rasters <- lapply(logos,
                   function(ll, clr = colors$darkgray) {
                      img <- as.raster(ll, interpolate = F)
-                     img[img == "#000000FF"] <- paste0(clr,"FF")
+                     img <- gsub("#000000", clr, img)
                      return(img)
                      }
                   )
