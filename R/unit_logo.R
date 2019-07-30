@@ -10,10 +10,12 @@ quartzFonts(uni_sans = c("UniSansBook", "UniSansBookItalic", "UniSansLightItalic
 quartzFonts(roboto = c("RobotoCondensed-Regular", "RobotoCondensed-Italic", "RobotoCondensed-Bold", "RobotoCondensed-BoldItalic"))
 
 ## color palette
-colors <- list(gray = "#e0e0e0",
+colors <- list(gray = "#ededed",
+               darkgray = "#737373",
                purple = "#4b2e83",
-               green = "#add0a0",
-               black = "#000000")
+               green = "#336633",
+               black = "#000000",
+               brown = "#663300")
 
 ## function to add png's with proper aspect ratio
 ## See: https://github.com/sckott/rphylopic/issues/14
@@ -39,7 +41,9 @@ wolf_logo <-  readPNG(getURLContent(wolf_url))
 loon_logo <-  readPNG(getURLContent(loon_url))
 cougar_logo <-  readPNG(getURLContent(cougar_url))
 
-
+salmon_logo[salmon_logo == 1] <- 0.5
+loon_logo[loon_logo == 1] <- 0.5
+cougar_logo[cougar_logo == 1] <- 0.5
 
 
 flag_out <- TRUE
@@ -56,33 +60,25 @@ if(flag_out) {
 
 par(mai = rep(0,4), omi = rep(0,4), family = "uni_sans")
 
-map("state", region = "washington", fill = TRUE, col = colors$green,
+map("state", region = "washington", fill = TRUE, col = colors$gray,
     mar = c(1,1,0,0))
 
 mtext("WASHINGTON", side = 3, line = -3.5,
-      cex = 3, adj = 0.87, col = colors$black)
-
-# par(family = "open_sans")
-# mtext("C o o p e r a t i v e", side = 3, line = -5.5,
-#       cex = 2, adj = 0.81)
-# mtext("Fish and Wildlife", side = 3, line = -7.6,
-#       cex = 1.8, adj = 0.76)
-# mtext("Research Unit", side = 3, line = -9.6,
-#       cex = 1.8, adj = 0.74)
+      cex = 3, adj = 0.87, col = colors$green)
 
 par(family = "roboto")
 mtext("C o o p e r a t i v e", side = 3, line = -5.5,
-      cex = 2, adj = 0.79, col = colors$black)
+      cex = 2, adj = 0.79, col = colors$brown)
 mtext("Fish and Wildlife", side = 3, line = -7.6,
-      cex = 1.8, adj = 0.76, col = colors$black)
+      cex = 1.8, adj = 0.76, col = colors$brown)
 mtext("Research Unit", side = 3, line = -9.6,
-      cex = 1.8, adj = 0.74, col = colors$black)
+      cex = 1.8, adj = 0.74, col = colors$brown)
 
 
 add_phylopic_base(salmon_logo, 0.5, 0.5, 0)
 
 logoing_func(salmon_logo, x=0.35, y=0.3, size=0.2)
-logoing_func(loon_logo, x=0.6, y=0.3, size=0.2)
+logoing_func(loon_logo, x=0.6, y=0.3, size=0.15)
 logoing_func(cougar_logo, x=0.85, y=0.3, size=0.15)
 
 if(flag_out) {
